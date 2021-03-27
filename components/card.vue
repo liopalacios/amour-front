@@ -15,20 +15,32 @@
             >
               <v-card-title v-text="card.title"></v-card-title>
             </v-img>
-
+            <v-card-text>
+              <h3>Ramo Armonía Floral &nbsp;<b>S/ 135.20</b></h3>
+            </v-card-text>
             <v-card-actions>
+              <v-btn
+                class="ma-2"
+                color="success"
+                dark
+              >
+                <v-icon
+                  dark
+                  right
+                >
+                  mdi-basket-plus
+                </v-icon>
+                Agregar
+              </v-btn>
               <v-spacer></v-spacer>
 
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
+              <v-btn
+                class="ma-2"
+                color="danger">
+                <v-icon
+                  danger
+                    right
+                  >mdi-heart</v-icon>
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -41,9 +53,8 @@
 export default {
   data: () => ({
     cards: [
-      { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-      { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-      { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
+      { title: 'Rosas', src: 'https://cdn.pixabay.com/photo/2016/11/23/17/56/wedding-1854074__340.jpg' },
+      { title: 'Best airlines', src: 'https://cdn.pixabay.com/photo/2016/05/13/17/16/letter-1390463__340.jpg' }
     ]
   })
 }
