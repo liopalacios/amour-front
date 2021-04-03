@@ -1,16 +1,7 @@
 <template>
-  <div id="app">
-  <v-app id="inspire">
     <v-card color="basil">
-      <v-card-title class="text-center justify-center py-6">
-        <h1 class="font-weight-bold display-3 basil--text">
-          BASiL
-        </h1>
-      </v-card-title>
-
       <v-tabs
         v-model="tab"
-        background-color="transparent"
         color="basil"
         grow
       >
@@ -36,20 +27,13 @@
         </v-tab-item>
       </v-tabs-items>
     </v-card>
-  </v-app>
-</div>
 </template>
 <script>
 export default {
-  name: 'header',
-  data () {
-    return {
-      tab: null,
-      items: [
-        'Appetizers', 'Entrees', 'Deserts', 'Cocktails'
-      ],
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }
-  }
+  data: () => ({
+    tab: null,
+    items: ['Appetizers', 'Entrees', 'Deserts', 'Cocktails'],
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  })
 }
 </script>

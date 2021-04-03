@@ -6,7 +6,7 @@ export default {
     titleTemplate: '%s - shopping-amour',
     title: 'shopping-amour',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
