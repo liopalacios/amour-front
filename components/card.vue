@@ -6,44 +6,49 @@
           :key="card.title"
           :cols="card.flex"
         >
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
-            <v-card-text>
-              <h3>Ramo Armonía Floral &nbsp;<b>S/ 135.20</b></h3>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn
-                class="ma-2"
-                color="success"
-                dark
+            <v-hover v-slot="{ hover }">
+              <v-card
+                :elevation="hover ? 12 : 2"
+                :class="{ 'on-hover': hover }"
               >
-                <v-icon
-                  dark
-                  right
+                <v-img
+                  :src="card.src"
+                  class="white--text align-end"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  height="200px"
                 >
-                  mdi-basket-plus
-                </v-icon>
-                Agregar
-              </v-btn>
-              <v-spacer></v-spacer>
+                  <v-card-title v-text="card.title"></v-card-title>
+                </v-img>
+                <v-card-text>
+                  <h3>Ramo Armonía Floral &nbsp;<b>S/ 135.20</b></h3>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn
+                    class="ma-2"
+                    color="success"
+                    dark
+                  >
+                    <v-icon
+                      dark
+                      right
+                    >
+                      mdi-basket-plus
+                    </v-icon>
+                    Agregar
+                  </v-btn>
+                  <v-spacer></v-spacer>
 
-              <v-btn
-                class="ma-2"
-                color="danger">
-                <v-icon
-                  danger
-                    right
-                  >mdi-heart</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
+                  <v-btn
+                    class="ma-2"
+                    color="danger">
+                    <v-icon
+                      danger
+                        right
+                      >mdi-heart</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-hover>
         </v-col>
       </v-row>
     </v-container>
@@ -59,3 +64,9 @@ export default {
   })
 }
 </script>
+<style>
+.v-card {
+transition: opacity .4s ease-in-out;
+}
+
+</style>
