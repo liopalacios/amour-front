@@ -39,10 +39,9 @@
             fixed-tabs
           >
 
-            <v-tabs-slider></v-tabs-slider>
-
+        <v-spacer></v-spacer>
             <v-menu :close-on-content-click="false" open-on-hover bottom offset-y style="position: static;">
-              <template v-slot:activator="{ on }">
+              <template v-slot:activator="{ on }" >
                 <v-tab
                     class="primary--white"
                   dark
@@ -52,17 +51,11 @@
                 </v-tab>
               </template>
 
-              <v-list  style=" width: 100% !important; left: 0 !important; right: 0 !important; padding: 15px !important;">
-                <v-row
-                    align="center"
-                    justify="space-around"
-                  >
-                    <v-col cols="5" sm="5" md="5">
-                      ssss
-                    </v-col>
-                    <v-col cols="7" sm="7" md="7">
+              <v-list style="position: relative !important;width: 100% !important; left: 0 !important; right: 0 !important; padding: 15px !important;">
+
+                <v-row>
+                    <v-col cols="4" sm="12" md="4">
                                 <v-list-group
-                                style="padding: 10px !important;"
                                   v-for="item in items2"
                                   :key="item.title"
                                   v-model="item.active"
@@ -72,7 +65,27 @@
                                   <template v-slot:activator  >
                                     <v-container>
                                           <v-list-tile>
-                                              <v-list-tile-title><v-icon>{{ item.icon }}</v-icon> {{ item.title }} </v-list-tile-title>
+                                             <v-icon>{{ item.icon }}</v-icon> <v-list-tile-title>&nbsp;&nbsp; {{ item.title }} ssssddddddddddddddddddddd</v-list-tile-title>
+                                          </v-list-tile>
+                                    </v-container>
+                                  </template>
+                                </v-list-group>
+                    </v-col>
+                    <v-col cols="4" sm="12" md="4">
+                      ssssdddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeee
+                    </v-col>
+                    <v-col cols="4" sm="12" md="4">
+                                <v-list-group
+                                  v-for="item in items2"
+                                  :key="item.title"
+                                  v-model="item.active"
+                                  :prepend-icon="item.action"
+                                  no-action
+                                >
+                                  <template v-slot:activator  >
+                                    <v-container>
+                                          <v-list-tile>
+                                             <v-icon>{{ item.icon }}</v-icon> <v-list-tile-title>&nbsp;&nbsp; {{ item.title }} ssssddddddddddddddddddddd</v-list-tile-title>
                                           </v-list-tile>
                                     </v-container>
                                   </template>
@@ -87,7 +100,7 @@
               href="#mobile-tabs-5-1"
               class="primary--white"
             >
-              <v-icon>mdi-phone</v-icon>
+              <v-icon>fas fa-search</v-icon>
             </v-tab>
 
             <v-tab
@@ -103,6 +116,8 @@
             >
               <v-icon>mdi-account-box</v-icon>
             </v-tab>
+
+        <v-spacer></v-spacer>
           </v-tabs>
         </template>
 
@@ -183,9 +198,13 @@
 
 <script>
 import Footer from '~/components/footer.vue'
+import '@fortawesome/fontawesome-free/css/all.css'
 export default {
   data () {
     return {
+      icons: {
+        iconfont: 'mdiSvg' // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+      },
       Footer,
       clipped: false,
       drawer: false,
@@ -205,12 +224,10 @@ export default {
       title: 'Vuetify.js',
       items2: [
         {
-          action: 'local_activity',
           icon: 'fas fa-lock',
           title: 'Opciones'
         },
         {
-          action: 'restaurant',
           title: 'Opciones 1'
         },
         {
